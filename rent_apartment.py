@@ -65,7 +65,6 @@ class RentApartment:
         transfer_tax = debt_free_price * RentApartment.TRANSFER_TAX
         renovation_cost = self.get_renovation_costs()
         return (monthly_rent_income - monthly_expenses) * 12 / (debt_free_price + transfer_tax + renovation_cost) * 100
-        #return (self.__rent - (self.__maintenance_charge + RentApartment.RENTAL_SERVICE_FEE)) * 12 / (self.__free_of_debt_price + (self.__free_of_debt_price * RentApartment.TRANSFER_TAX) + self.__renovation_costs) * 100
 
     def compare_rental_incomes(self, other):
         if self.calculate_rental_income() > other.calculate_rental_income():
@@ -82,8 +81,6 @@ class RentApartment:
         else:
             monthly_expenses = self.get_maintenance_charge()
         return (monthly_rent_income - monthly_expenses - loan_interest) * 12 / down_payment * 100
-
-        #return (self.__rent - (self.__maintenance_charge + RentApartment.RENTAL_SERVICE_FEE) - loan_interest) * 12 / down_payment * 100
 
     def check_price_level(self):
         if self.__size < RentApartment.STUDIO_SIZE_LIMIT:
